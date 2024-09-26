@@ -30,8 +30,9 @@ function Otp() {
     <>
       <div className="form-block">
         <div className="upper-header" >
-          <h2 >Verify your email</h2>
         </div>
+          <h2 >Verify your email</h2>
+        
         <div style={{color:'red' , fontSize:'0.5rem'}} >{error}</div>
         <div className="form-group">
           <label htmlFor="OTP">OTP</label>

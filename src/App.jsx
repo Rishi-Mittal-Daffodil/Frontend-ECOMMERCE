@@ -4,6 +4,7 @@ import Login from './components/login/Login';
 import Signup  from './components/signup/Signup';
 import Home from './components/home/Home';
 import Otp from './components/OTP/Otp';
+import Footer from './components/footer/Footer';
 function App() {
   return (
     <div>
@@ -16,6 +17,7 @@ function App() {
           <Route path='/home' element={<Home />}  />
         </Routes>
       </Router>
+      <Footer />
     </div>
   )
 }

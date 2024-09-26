@@ -65,6 +65,15 @@
     border: solid rgb(255, 255, 255) 2px;
 }
 
+.form-group .select-class{
+    display: block;
+    width: 22rem;
+    padding: 8px;
+    border-radius: 5px;
+    border: solid rgb(255, 255, 255) 2px;
+    background-color: aliceblue
+}
+
 .register-btn {
     width: 93%;
     padding: 10px;
@@ -133,4 +142,13 @@
     padding: 15px;
     width: 100%;
     border-radius: 4px;
+}
+
+
+
+.address-upper-detail img {
+    width: 1.8rem;
+    height: 0.9rem ;
+    cursor: pointer;
+
 }
