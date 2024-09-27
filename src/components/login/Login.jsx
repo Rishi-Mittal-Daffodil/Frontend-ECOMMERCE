@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import youtube from "../asset/ecommerce-logo.png";
 import axios from "axios";
 import "./Login.css";
 
@@ -33,11 +32,10 @@ function Login() {
     <>
       <div className="form-block">
         <div className="upper-header">
-          <img id="logo1" src={youtube} alt="logo" />
           <h2>Login</h2>
         </div>
         <hr className="horizontal-line" />
-        <div  style={{color:'red' , fontSize:'0.5rem'}} >{error}</div>
+        {/* <div  style={{color:'red' , fontSize:'0.5rem'}} >{error}</div> */}
         <form className="Form" onSubmit={(e) => handleLogin(e)}>
           <div className="form-group">
             <label htmlFor="email">Email</label>

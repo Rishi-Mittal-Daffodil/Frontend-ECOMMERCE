@@ -1,11 +1,10 @@
 /* src/Footer.css */
 .footer {
-    background-color: #3c3c3c;
-    color: white;
+    background-color: #e6e7e8;;
+    color: #3c3c3c;
     position: relative;
     padding: 20px 0;
     text-align: center;
-    top: 30vh;
 }
 .footer-container {
   display: flex;
@@ -30,14 +29,14 @@
   margin-bottom: 10px;
 }
 .footer-section ul li a {
-  color: white;
+  color: #3c3c3c;
   text-decoration: none;
 }
 .footer-section ul li a:hover {
   text-decoration: underline;
 }
 .social-icons a {
-  color: white;
+  color: #3c3c3c;
   margin: 0 10px;
   text-decoration: none;
   font-size: 1.5em;
@@ -46,3 +45,5 @@
   margin-top: 20px;
   font-size: 0.9em;
 }
+
+
