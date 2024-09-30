@@ -21,16 +21,11 @@ import arrow from '../../assets/arrow-back.png'
 // }
 function Signup() {
   const [firstName, setFirstName] = useState();
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState();
-  const [lastName, setLastName] = useState();
   const [password, setPassword] = useState();
+  const [confirmPassword , setConfirmPassword] = useState() ; 
   const [error , setError] = useState() ; 
-  const [nextFlag ,  setNextFlag] =  useState(false) ;
-  const [street , setStreet] =  useState("");
-  const [city , setCity] =  useState("");
-  const [state , setState] =  useState("");
-  const [postalCode , setPostalCode] =  useState("");
-  const [country , setCountry] = useState("") ;   
 
 
 
@@ -40,20 +35,24 @@ function Signup() {
     e.preventDefault();
     setError("please wait..")
     const formdata = new FormData();
-    const address = {
-      street  , country  , state , postalCode ,  city
+
+
+    if(password!==confirmPassword){
+      setError("Please Write Correct Password") ; 
+      return ;   
     }
+
     const userObj = {
-      firstName , lastName , email  , password , address
+      firstName , lastName , email  , password 
     }
 
     try {
       const res = await axios.post(
-        "http://localhost:8080/api/v1/user/register",
+        "http://localhost:8080/um/user-request",
         userObj
       );
       console.log(res.data);
-      navigate("/verify-otp", { state: email });
+      navigate("/signup/verify-otp", { state: email });
     } catch (error) {
       setError('something went wrong while registering')
       console.error("Error during signup:", error);
@@ -61,61 +60,65 @@ function Signup() {
   };
 
 
-
   return (
     <>
       <div className="form-block">
-        <div className="upper-header">
-          <h2>Register</h2>
-        </div>
-        <hr className="horizontal-line" />
-        <div  style={{color:'red' , fontSize:'0.5rem'}} >{error}</div>
+        <div  style={{color:'blue' , fontSize:'0.5rem'}} >{error}</div>
         <form   className="Form"  onSubmit={(e) => handleSignup(e)}>
           <div className="form-group">
-            <label htmlFor="firstName">First Name</label>
             <input
               type="text"
               name="firstName"
               id="firstName"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
+              placeholder="FirstName *"
               required
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="lastName">Last Name</label>
             <input
               type="text"
               name="lastName"
               value={lastName}
               id="lastName"
               onChange={(e) => setLastName(e.target.value)}
-              required
+              placeholder="LastName"
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="email">Email</label>
             <input
               type="email"
               name="email"
               value={email}
               id="email"
               onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email ID *"
               required
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="password">Password</label>
             <input
               type="password"
               name="password"
               value={password}
               id="password"
               onChange={(e) => setPassword(e.target.value)}
-
+              placeholder="Enter Password *"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="password"
+              name="password"
+              value={confirmPassword}
+              id="password"
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              placeholder="Confirm Password *"
               required
             />
           </div>

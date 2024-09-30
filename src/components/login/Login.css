@@ -1,38 +1,19 @@
 .form-block{
     display: flex;
     flex-direction: column;
-    width: 26vw;
+    width: 400px;
     height: auto;
-    background-color: #3c3c3c;
+    background-color: #fffdfd ;
     align-items: center;
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    top: 2rem;
-    border-radius: 20px ;
+    border: 0.5px solid rgb(66, 66, 66);
     color: aliceblue;
 }
 
-.upper-header{
-    display: flex;
-    flex-direction: row;
-    margin-top: 20px;
-}
-
-.upper-header #logo1{
-    position: relative;
-    right: 147%;
-    width: 2.8rem;
-}
-
-.upper-header h2{
-    margin-top: 7px ; 
-    position: relative;
-    right: 12%;
-}
 
 .form-block .Form{
-    margin-top: 20px;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -44,35 +25,23 @@
     padding: 8px;
 }
 
-.horizontal-line {
-    width: 90%;
-    margin-top: 10px;
-
-}
-
-
-.form-group label {
-    margin-bottom: 3px;
-    font-size: 1.1rem;
-    font-weight: 500;
-}
 
 .form-group input{
     display: block;
     width: 20vw;
     padding: 8px;
     border-radius: 5px;
-    border: solid rgb(255, 255, 255) 2px;
+    border: 0.5px solid rgb(165, 165, 165) ;
 }
 
 .register-btn {
     width: 93%;
-    padding: 10px;
-    background-color: #e0003f;
+    padding: 8px;
+    background-color:#ed2d2f;;
     color: #fff;
     border: none;
-    border-radius: 8px;
-    font-size: 1.2rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 16px;

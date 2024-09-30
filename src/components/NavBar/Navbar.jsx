@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { FaSearch, FaUser, FaShoppingCart, FaRegHeart } from "react-icons/fa";
 import "./Navbar.css"; // External CSS file
 function  Navbar(){
-  // const navigate = useNavigate() ; 
+  const navigate = useNavigate() ; 
 
   
   return (
@@ -11,14 +11,14 @@ function  Navbar(){
       <div className="upperdiv"></div>
       <nav className="navbar">
         <div className="navbar-left">
-          <div className="logo">TrenDIFY</div>
+          <div className="logo" onClick={()=>navigate('/')} >TrenDIFY</div>
           <a href="/" className="home-link">
             Home
           </a>
         </div>
         <div className="navbar-right">
           <FaSearch className="icon" />
-          <FaUser href="/login" className="icon" > </FaUser> 
+          <FaUser className="icon" onClick={()=>navigate('/login')} ></FaUser> 
           <FaRegHeart  className="icon" />
           <FaShoppingCart className="icon" />
         </div>

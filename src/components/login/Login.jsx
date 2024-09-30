@@ -16,13 +16,14 @@ function Login() {
       email: email,
       password: password,
     };
+    setError("Please Wait .....")
 
     try {
       const res = await axios.post(
-        "http://localhost:8080/api/v1/user/login",
+        "http://localhost:8080/um/login",
         data
       );
-      navigate("/verify-otp", { state: { email } });
+      navigate('/') ; 
     } catch (error) {
       setError("please enter valid credentials")
       console.log("error during login", error);
@@ -31,37 +32,33 @@ function Login() {
   return (
     <>
       <div className="form-block">
-        <div className="upper-header">
-          <h2>Login</h2>
-        </div>
-        <hr className="horizontal-line" />
-        {/* <div  style={{color:'red' , fontSize:'0.5rem'}} >{error}</div> */}
+        <div  style={{color:'blue' , fontSize:'0.5rem'}} >{error}</div>
         <form className="Form" onSubmit={(e) => handleLogin(e)}>
           <div className="form-group">
-            <label htmlFor="email">Email</label>
             <input
               type="text"
               name="email"
               id="email"
               onChange={(e) => setEmail(e.target.value)}
               required
+              placeholder="Email ID *"
             />
           </div>
           <div className="form-group">
-            <label htmlFor="password">Password</label>
             <input
               type="password"
               name="password"
               id="password"
               onChange={(e) => setPassword(e.target.value)}
               required
+              placeholder="Password *"
             />
           </div>
           <button className="register-btn" type="Submit">
             Login
           </button>
           <p class="login-text">
-            Not registered ?{" "}
+            Not registered?{" "}
             <a onClick={() => navigate("/signup")}>Register here</a>
           </p>
         </form>

@@ -32,6 +32,7 @@
   .logo {
     margin-left: 25px;
     font-size: 26px;
+    cursor: pointer;
     font-weight: bold;
     color: #333;
   }
