@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Loader from "../loader/Loader";
 import "./Login.css";
 
 function Login() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const [error , setError] = useState() ; 
+  const [error, setError] = useState();
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -16,23 +18,23 @@ function Login() {
       email: email,
       password: password,
     };
-    setError("Please Wait .....")
+    setLoading(true);
 
     try {
-      const res = await axios.post(
-        "http://localhost:8080/um/login",
-        data
-      );
-      navigate('/') ; 
+      const res = await axios.post("http://localhost:8080/um/login", data);
+      setLoading(false);
+      navigate("/");
     } catch (error) {
-      setError("please enter valid credentials")
+      setLoading(false);
+      setError("please enter valid credentials");
       console.log("error during login", error);
     }
   };
   return (
     <>
+      {loading ? <Loader /> : <></>}
       <div className="form-block">
-        <div  style={{color:'blue' , fontSize:'0.5rem'}} >{error}</div>
+        <div style={{ color: "red", fontSize: "0.5rem" }}>{error}</div>
         <form className="Form" onSubmit={(e) => handleLogin(e)}>
           <div className="form-group">
             <input

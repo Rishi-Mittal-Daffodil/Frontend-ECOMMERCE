@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./components/login/Login";
 import Signup from "./components/signup/Signup";
 import Home from "./components/home/Home";
-import Otp from "./components/OTP/Otp";
+import Otp from "./components/otp/Otp";
 import Footer from "./components/footer/Footer";
 import FooterUpperPart from "./components/footerup/FooterUpperPart";
-import Navbar from "./components/NavBar/Navbar";
-import Authpage from "./pages/AuthPage/Authpage";
+import Navbar from "./components/navbar/Navbar";
+import Authpage from "./pages/auth page/Authpage";
 function App() {
   return (
     <div>

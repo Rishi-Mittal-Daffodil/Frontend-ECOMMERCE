@@ -1,72 +1,64 @@
-.form-block{
-    display: flex;
-    flex-direction: column;
-    width: 400px;
-    height: auto;
-    background-color: #fffdfd ;
-    align-items: center;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    border: 0.5px solid rgb(66, 66, 66);
-    color: aliceblue;
+.form-block {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: auto;
+  background-color: #fffdfd;
+  align-items: center;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0.5px solid rgb(66, 66, 66);
+  color: aliceblue;
 }
 
-
-.form-block .Form{
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
+.form-block .Form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.form-group{
-    padding: 8px;
+.form-group {
+  padding: 8px;
 }
 
-
-.form-group input{
-    display: block;
-    width: 20vw;
-    padding: 8px;
-    border-radius: 5px;
-    border: 0.5px solid rgb(165, 165, 165) ;
+.form-group input {
+  display: block;
+  width: 20vw;
+  padding: 8px;
+  border-radius: 5px;
+  border: 0.5px solid rgb(165, 165, 165);
 }
 
 .register-btn {
-    width: 93%;
-    padding: 8px;
-    background-color:#ed2d2f;;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 16px;
+  width: 93%;
+  padding: 8px;
+  background-color: #ed2d2f;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 16px;
 }
 
 .register-btn:hover {
-    background-color: #ff0149;
+  background-color: #ff0149;
 }
 
-
 .login-text {
-    margin-top: 15px;
-    margin-bottom: 5%;
+  margin-top: 15px;
+  margin-bottom: 5%;
 }
 
 .login-text a {
-    color: #ff0047;
-    text-decoration: none;
-    font-weight: bold;
+  color: #ff0047;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .login-text a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
-
-
-
-/* create input file field with good css i have to upload image files in that field */

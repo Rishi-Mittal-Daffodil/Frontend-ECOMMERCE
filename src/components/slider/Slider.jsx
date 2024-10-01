@@ -3,7 +3,7 @@ import "./Slider.css";
 
 function Slider() {
   return (
-    <Carousel className="slider-block" >
+    <Carousel className="slider-block">
       <Carousel.Item>
         <img
           className="carausel-img"

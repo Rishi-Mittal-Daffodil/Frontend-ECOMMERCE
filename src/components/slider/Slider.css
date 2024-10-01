@@ -1,0 +1,17 @@
+.carausel-img {
+  width: 90vw;
+  height: 30vw;
+}
+
+.slider-block {
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 640px) {
+  .carausel-img {
+    width: 100vw;
+    height: 40vw;
+  }
+}

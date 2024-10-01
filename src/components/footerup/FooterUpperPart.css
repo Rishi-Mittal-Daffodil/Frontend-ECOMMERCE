@@ -1,19 +1,24 @@
-.footer-up-1{
-    background-color: #e71318;
-    height: 4rem ;
-    text-align: center;
-    display: grid;
-    align-items: center;
-    font-size: 2rem ;
+.footer-up-1 {
+  background-color: #e71318;
+  height: 4rem;
+  text-align: center;
+  display: grid;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.footer-up-2 {
+  background-color: aliceblue;
+  height: 6rem;
+  text-align: center;
+  display: grid;
+  align-items: center;
+  font-size: 2.5rem;
+  color: #58595b;
+}
+
+@media screen and (max-width: 640px) {
+  .footer-up-2 {
+    height: 8rem;
   }
-
-
-.footer-up-2{
-    background-color: aliceblue;
-    height: 6rem;
-    text-align: center;
-    display: grid;
-    align-items: center;
-    font-size: 2.5rem;
-    color:  #58595b;
 }

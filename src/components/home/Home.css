@@ -1,6 +1,14 @@
-.home-heading{
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-    font-weight: 600;
+.home-heading {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.newarrival-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }

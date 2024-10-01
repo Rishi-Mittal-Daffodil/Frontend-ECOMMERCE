@@ -3,12 +3,13 @@ import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Login from "../../components/login/Login";
 import Signup from "../../components/signup/Signup";
 import "./Authpage.css";
+import Loader from "../../components/loader/Loader";
 
 function Authpage() {
   const [heading, setHeading] = useState("Login with The TrendiFY");
   const [flag, setFlag] = useState(false);
   const navigate = useNavigate();
-
+  const [loading , setLoading] =  useState(false) ; 
   const { pathname } = useLocation();
 
   function handleLoginToggle() {
@@ -30,6 +31,7 @@ function Authpage() {
 
   return (
     <>
+    {/* <Loader /> */}
       <div className="form-block-out">
         <div className="form-block-in">
           <p className="form-title">{heading}</p>
