@@ -1,154 +1,111 @@
-.form-block{
-    display: flex;
-    flex-direction: column;
-    width: 470px;
-    height: auto;
-    background-color: #3c3c3c;
-    align-items: center;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    top: 8rem;
-    border-radius: 20px ;
-    color: aliceblue;
+.form-block {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: auto;
+  background-color: #ffffff;
+  align-items: center;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0.5px solid rgb(66, 66, 66);
+  color: rgb(37, 37, 37);
 }
 
-.upper-header{
-    display: flex;
-    flex-direction: row;
-    margin-top: 20px;
+.form-block .Form {
+  margin-top: 20px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.upper-header #logo{
-    position: relative;
-    right: 100%;
-    width: 2.8rem;
+.form-group {
+  padding: 8px;
 }
 
-.upper-header h2{
-    margin-top: 7px ; 
-    position: relative;
-    right: 12%;
+.form-group input {
+  display: block;
+  width: 21rem;
+  padding: 8px;
+  border-radius: 5px;
+  border: 0.5px solid rgb(165, 165, 165);
 }
 
-.form-block .Form{
-    margin-top: 20px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-}
-
-.form-group{
-    padding: 8px;
-}
-
-.horizontal-line {
-    width: 90%;
-    margin-top: 10px;
-
-}
-
-
-.form-group label {
-    margin-bottom: 3px;
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-
-.form-group input{
-    display: block;
-    width: 21rem;
-    padding: 8px;
-    border-radius: 5px;
-    border: solid rgb(255, 255, 255) 2px;
-}
-
-.form-group .select-class{
-    display: block;
-    width: 22rem;
-    padding: 8px;
-    border-radius: 5px;
-    border: solid rgb(255, 255, 255) 2px;
-    background-color: aliceblue
+.form-group .select-class {
+  display: block;
+  width: 22rem;
+  padding: 8px;
+  border-radius: 5px;
+  border: solid rgb(255, 255, 255) 2px;
+  background-color: aliceblue;
 }
 
 .register-btn {
-    width: 93%;
-    padding: 10px;
-    background-color: #e0003f;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 16px;
+  width: 93%;
+  padding: 8px;
+  background-color: #298e83;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 16px;
 }
 
 .register-btn:hover {
-    background-color: #ff0149;
+  background-color: #2e9e91;
 }
 
-
 .login-text {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 .login-text a {
-    color: #ff0047;
-    text-decoration: none;
-    font-weight: bold;
+  color: #ff0047;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .login-text a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
-
-
-
 
 /* ------------------------------- */
 
-
-
 .file-upload-input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
 }
 
 .image-preview {
-    margin-top: 20px;
-    text-align: center;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .image-preview img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
-
 
 .drag-text {
-    border: #fff dashed 0.5px;
-    font-size: 0.9rem;
-    padding: 15px;
-    width: 100%;
-    border-radius: 4px;
+  border: #fff dashed 0.5px;
+  font-size: 0.9rem;
+  padding: 15px;
+  width: 100%;
+  border-radius: 4px;
 }
 
-
-
 .address-upper-detail img {
-    width: 1.8rem;
-    height: 0.9rem ;
-    cursor: pointer;
-
+  width: 1.8rem;
+  height: 0.9rem;
+  cursor: pointer;
 }
