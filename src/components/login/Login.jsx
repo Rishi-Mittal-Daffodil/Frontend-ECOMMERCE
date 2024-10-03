@@ -17,13 +17,18 @@ function Login() {
     const data = {
       email: email,
       password: password,
+      withCredentials: true // Send cookies with the request
     };
     setLoading(true);
 
     try {
-      const res = await axios.post("http://localhost:8080/um/login", data);
+      const res = await axios.post("http://localhost:8080/um/login", data );
+      // console.log(res);
+      localStorage.setItem('user-token' , res.data.data.refreshToken) ;
+      
       setLoading(false);
       navigate("/");
+      location.reload() ;
     } catch (error) {
       setLoading(false);
       setError("please enter valid credentials");
@@ -70,3 +75,10 @@ function Login() {
 }
 
 export default Login;
+
+
+
+/*
+basically i am using refresh token first i store refresh-token in local storage after that i check that particular user token is 
+valid for certain operation or not if yes than  i just allow user to use that route with their featutres also also i obtain the user role by this token   . 
+*/
