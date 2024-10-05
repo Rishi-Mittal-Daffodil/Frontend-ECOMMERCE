@@ -22,9 +22,10 @@ function Login() {
     setLoading(true);
 
     try {
-      const res = await axios.post("http://localhost:8080/um/login", data );
+      const res = await axios.post("http://localhost:8080/um/login" , data );
       // console.log(res);
       localStorage.setItem('user-token' , res.data.data.refreshToken) ;
+      // document.cookie = `refreshToken=${res.data.data.refreshToken}; path=/; max-age=3600`;
       
       setLoading(false);
       navigate("/");

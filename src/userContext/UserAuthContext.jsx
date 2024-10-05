@@ -14,10 +14,13 @@ export default function UserAuthContext({ children }) {
   useEffect(() => {
     async function fetchData() {
       if (localStorage.getItem("user-token")) {
+        let token = localStorage.getItem("user-token") ; 
         const res = await axios.post(
-          "http://localhost:8080/um/user/verified-check",
+          "http://localhost:8080/um/user/verified-check" ,
+          
           {
-            token: localStorage.getItem("user-token"),
+            token:token , 
+            withCredentials :  true , 
           }
         );
         console.log(res);

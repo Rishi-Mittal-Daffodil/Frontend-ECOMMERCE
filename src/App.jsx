@@ -29,7 +29,7 @@ function App() {
               <Route path="signup" element={<Signup />} />
               <Route path="/home" element={<Home />} />
               <Route path="/verify-user" element={<UserAuthContext />} />
-              <Route path="signup/verify-otp" element={<Otp />} />
+              <Route path="signup/verify-otp" element={isAuth? <></>: <Otp />} />
             </Route>
             <Route path="/user/profile" element={<ProfilePage />} />
             <Route path="/user/cart"  element={<Cart />}/>
@@ -51,3 +51,5 @@ function App() {
 }
 
 export default App;
+
+

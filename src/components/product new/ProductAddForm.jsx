@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 function ProductAddForm() {
   const [product, setProduct] = useState({
     name: "",
     description: "",
-    category: "",
+    category: {},
     brand: "",
     sku: "",
     price: 0,
@@ -18,6 +19,7 @@ function ProductAddForm() {
     ratings: 0,
     weight: 0,
   });
+  
 
   const handleChange = (e) => {
     setProduct({ ...product, [e.target.name]: e.target.value });
@@ -46,6 +48,32 @@ function ProductAddForm() {
       setProduct({ ...product, images: [...product.images, {}] });
     }
   };
+
+  // category fetching  ....
+  
+  let token =  localStorage.getItem('user-token')
+  const firstLevel = new Set() ; 
+  const secondLevel = new Set() ; 
+  const thirdLevel = new Set() ; 
+  let categoryData ; 
+  useEffect(()=>{
+    try {
+      const getCategoryData = async ()=>{
+        const res =  await axios.get('http://localhost:8080/pm/category/get-category' , {
+          headers:{
+            'Authorization': `Bearer ${token}` 
+          }
+        }) ; 
+        console.log(res);
+        categoryData = res ; 
+      }
+      getCategoryData();
+    } catch (error) {
+      console.log(error);
+    }
+  } , [])
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -76,15 +104,33 @@ function ProductAddForm() {
         required
       />
 
-      <label style={styles.label}>Category</label>
-      <input
-        style={styles.input}
-        type="text"
-        name="category"
-        value={product.category}
+      <label  style={styles.label}>First Level Category</label>
+      <select
+        style={styles.select}
+        name="status"
+        value={product.status}
         onChange={handleChange}
-        required
-      />
+      >
+        <option value="">Select First Level Category</option>
+      </select>
+      <label  style={styles.label}>Second Level Category</label>
+      <select
+        style={styles.select}
+        name="status"
+        value={product.status}
+        onChange={handleChange}
+      >
+        <option value="">Select Second Level Category</option>
+      </select>
+      <label  style={styles.label}>Third Level Category</label>
+      <select
+        style={styles.select}
+        name="status"
+        value={product.status}
+        onChange={handleChange}
+      >
+        <option value="">Select Third Level Category</option>
+      </select>
 
       <label style={styles.label}>Brand</label>
       <input
@@ -280,6 +326,3 @@ const styles = {
 };
 
 export default ProductAddForm;
-
-//i have mutiple image to insert in form suppose if i want to store multiple image i insert first image to insert second image new input feild should be appear
-//same i have another field but in this we have only key and  value if i store one key value another one should be available for me after added that create react component with great css .
