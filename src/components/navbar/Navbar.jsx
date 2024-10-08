@@ -5,21 +5,29 @@ import "./Navbar.css"; // External CSS file
 import { useAuth } from "../../userContext/UserAuthContext";
 import axios from "axios";
 import Loader from "../loader/Loader";
+import toast from "react-hot-toast";
 function Navbar() {
   const navigate = useNavigate();
   const { isAuth, role } = useAuth();
   const [loading, setLoading] = useState();
 
   const handleLogout = async () => {
-    setLoading(true);
-    const res = await axios.post("http://localhost:8080/um/logout", {
-      token: localStorage.getItem("user-token"),
-    });
-    setLoading(false);
-    if (res.status === 200) {
-      localStorage.removeItem("user-token");
-      navigate("/login");
-      location.reload();
+    try {
+      setLoading(true);
+      const res = await axios.post("http://localhost:8080/um/logout", {
+        token: localStorage.getItem("user-token"),
+      });
+      toast.success('Logout Successfully')
+      setLoading(false);
+      if (res.status === 200) {
+        localStorage.removeItem("user-token");
+        navigate("/login");
+        setTimeout(()=>{
+          location.reload(false);
+        } , 1500) ; 
+      }
+    } catch (error) {
+      toast.error('Something Wrong While Logout')
     }
   };
 

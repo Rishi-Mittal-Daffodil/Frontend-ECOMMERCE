@@ -14,6 +14,8 @@ import UserAuthContext, { useAuth } from "./userContext/UserAuthContext";
 import ProfilePage from "./pages/profile page/ProfilePage";
 import Cart from "./pages/cart page/Cart";
 import Wishlist from "./pages/wishlist page/Wishlist";
+import { Toaster } from "react-hot-toast";
+
 function App() {
   const { isAuth, role } = useAuth();
   console.log(isAuth, role);
@@ -21,6 +23,7 @@ function App() {
     <div>
       <UserAuthContext>
         <Router>
+          <Toaster position="top-right" reverseOrder={false} />
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />

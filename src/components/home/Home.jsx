@@ -3,6 +3,8 @@ import Slider from "../slider/Slider";
 // import Cardslider from "../cardslider/Cardslider";
 import Card from "../product card/Card";
 import "./Home.css";
+import { useLocation } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 
 const newArrivalSampleData = [
   {
@@ -81,6 +83,7 @@ const newArrivalSampleData = [
 function Home() {
   return (
     <>
+      <ToastContainer />
       <Slider />
       {/* <div className="home-heading" ><h2>Best Sellers</h2></div> */}
       <div className="home-heading">

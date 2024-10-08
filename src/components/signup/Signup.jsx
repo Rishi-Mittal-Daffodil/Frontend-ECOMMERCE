@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Signup.css";
 import Loader from "../loader/Loader";
+import toast from "react-hot-toast";
 function Signup() {
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState("");
@@ -10,7 +11,6 @@ function Signup() {
   const [password, setPassword] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState();
 
   const navigate = useNavigate();
 
@@ -19,7 +19,7 @@ function Signup() {
     const formdata = new FormData();
 
     if (password !== confirmPassword) {
-      setError("Please Write Correct Password");
+      toast.error("Please Write Correct Password");
       return;
     }
 
@@ -38,9 +38,10 @@ function Signup() {
       console.log(res.data);
       setLoading(false);
       navigate("/signup/verify-otp", { state: email });
+      toast.success("Otp Sent to Your Email");
     } catch (error) {
       setLoading(false);
-      setError("something went wrong while registering");
+      toast.error("Something went wrong");
       console.error("Error during signup:", error);
     }
   };
@@ -49,7 +50,6 @@ function Signup() {
     <>
       {loading ? <Loader /> : <></>}
       <div className="form-block">
-        <div style={{ color: "blue", fontSize: "0.5rem" }}>{error}</div>
         <form className="Form" onSubmit={(e) => handleSignup(e)}>
           <div className="form-group">
             <input
@@ -112,7 +112,7 @@ function Signup() {
           <button className="register-btn" type="submit">
             Next
           </button>
-          <p class="login-text">
+          <p className="login-text">
             Already have an account?{" "}
             <a onClick={() => navigate("/login")}>Login</a>
           </p>

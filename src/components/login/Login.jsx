@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Loader from "../loader/Loader";
 import "./Login.css";
+import toast from "react-hot-toast";
 
 function Login() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -26,13 +26,15 @@ function Login() {
       // console.log(res);
       localStorage.setItem('user-token' , res.data.data.refreshToken) ;
       // document.cookie = `refreshToken=${res.data.data.refreshToken}; path=/; max-age=3600`;
-      
       setLoading(false);
-      navigate("/");
-      location.reload() ;
+      navigate("/" );
+      toast.success("login successfully");
+      setTimeout(()=>{
+        location.reload();
+      }, 2000)
     } catch (error) {
       setLoading(false);
-      setError("please enter valid credentials");
+      toast.error('please enter valid credentials');
       console.log("error during login", error);
     }
   };
@@ -40,7 +42,6 @@ function Login() {
     <>
       {loading ? <Loader /> : <></>}
       <div className="form-block">
-        <div style={{ color: "red", fontSize: "0.5rem" }}>{error}</div>
         <form className="Form" onSubmit={(e) => handleLogin(e)}>
           <div className="form-group">
             <input
@@ -65,7 +66,7 @@ function Login() {
           <button className="register-btn" type="Submit">
             Login
           </button>
-          <p class="login-text">
+          <p className="login-text">
             Not registered?{" "}
             <a onClick={() => navigate("/signup")}>Register here</a>
           </p>
