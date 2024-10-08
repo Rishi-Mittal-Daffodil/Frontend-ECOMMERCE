@@ -9,7 +9,6 @@ function Authpage() {
   const [heading, setHeading] = useState("Login with The TrendiFY");
   const [flag, setFlag] = useState(false);
   const navigate = useNavigate();
-  const [loading , setLoading] =  useState(false) ; 
   const { pathname } = useLocation();
 
   function handleLoginToggle() {
@@ -24,14 +23,15 @@ function Authpage() {
   useEffect(() => {
     if (pathname === "/signup") {
       setFlag(true);
+      setHeading("Register with The TrendiFY")
     } else {
+      setHeading("Login with The TrendiFY");
       setFlag(false);
     }
   }, [pathname]);
 
   return (
     <>
-    {/* <Loader /> */}
       <div className="form-block-out">
         <div className="form-block-in">
           <p className="form-title">{heading}</p>

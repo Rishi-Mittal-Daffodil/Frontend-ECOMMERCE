@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import Loader from "../loader/Loader";
+import toast from "react-hot-toast";
 
 function Otp() {
   const [otp, setOtp] = useState();
-  const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -28,9 +28,10 @@ function Otp() {
       );
       setLoading(false);
       navigate("/login");
+      toast.success("User Registered Successfully");
     } catch (error) {
       setLoading(false);
-      setError("please enter valid otp");
+      toast.error("Please Enter Valid OTP");
       console.log("error during otp verification ", error);
     }
   };
@@ -40,7 +41,6 @@ function Otp() {
       <div className="form-block">
         <div className="upper-header"></div>
         <h5 style={{ marginTop: "20px" }}>Verify your email</h5>
-        <div style={{ color: "blue", fontSize: "0.5rem" }}>{error}</div>
         <div className="form-group">
           <label htmlFor="OTP">OTP</label>
           <input
@@ -59,7 +59,7 @@ function Otp() {
         >
           Verify
         </button>
-        <p class="login-text">
+        <p className="login-text">
           If verification failed please retry{" "}
           <a onClick={() => navigate("/signup")}>Retry</a>
         </p>
