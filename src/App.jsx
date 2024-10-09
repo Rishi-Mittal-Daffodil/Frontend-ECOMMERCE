@@ -15,6 +15,9 @@ import ProfilePage from "./pages/profile page/ProfilePage";
 import Cart from "./pages/cart page/Cart";
 import Wishlist from "./pages/wishlist page/Wishlist";
 import { Toaster } from "react-hot-toast";
+import ProductPage from "./pages/product page/ProductPage";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import NotFoundPage from "./pages/notfound page/NotFoundPage";
 
 function App() {
   const { isAuth, role } = useAuth();
@@ -32,11 +35,15 @@ function App() {
               <Route path="signup" element={<Signup />} />
               <Route path="/home" element={<Home />} />
               <Route path="/verify-user" element={<UserAuthContext />} />
-              <Route path="signup/verify-otp" element={isAuth? <></>: <Otp />} />
+              <Route
+                path="signup/verify-otp"
+                element={isAuth ? <></> : <Otp />}
+              />
             </Route>
             <Route path="/user/profile" element={<ProfilePage />} />
-            <Route path="/user/cart"  element={<Cart />}/>
-            <Route path="/user/wishlist" element={<Wishlist />}/>
+            <Route path="/user/cart" element={<Cart />} />
+            <Route path="/user/wishlist" element={<Wishlist />} />
+            <Route path="/products/:productId" element={<ProductPage />} />
             <Route
               path="/products"
               element={role === "admin" ? <ProductManage /> : <></>}
@@ -44,6 +51,7 @@ function App() {
               <Route path="new" element={<ProductAddForm />} />
               <Route path=":productid/edit" />
             </Route>
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Router>
       </UserAuthContext>
@@ -54,5 +62,3 @@ function App() {
 }
 
 export default App;
-
-

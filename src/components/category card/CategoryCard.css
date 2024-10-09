@@ -1,0 +1,18 @@
+.category-card {
+  width: 23rem;
+  height: 23rem;
+  overflow: hidden;
+  margin: 0px 15px 20px 15px;
+  cursor: pointer;
+}
+.category-image:hover {
+    transform: scale(1.15);
+}
+
+.category-image{
+    max-width: 23rem;
+    border-style: none;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+

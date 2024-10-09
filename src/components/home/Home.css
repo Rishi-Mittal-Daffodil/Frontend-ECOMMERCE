@@ -1,14 +1,18 @@
 .home-heading {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
-  font-weight: 600;
-  margin-bottom: 30px;
+  margin-top: 40px;
+  margin-bottom: 25px;
 }
 
-.newarrival-data {
+.home-heading h2{
+  font-weight: 600;
+}
+
+.newarrival-data,
+.categories-data {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
 }

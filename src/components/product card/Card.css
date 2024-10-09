@@ -1,9 +1,8 @@
 .card1 {
   width: 23rem;
   height: 36rem;
-  margin-left: 30px;
+  margin: 0px 15px 20px 15px;
   cursor: pointer;
-  margin-bottom: 20px;
 }
 
 .card-image {
