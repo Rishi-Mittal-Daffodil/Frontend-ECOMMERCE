@@ -1,51 +1,53 @@
 .dynamic-form {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .dynamic-form h2, h3 {
-    text-align: center;
-    color: #333;
-  }
-  
-  .image-field, .key-value-field {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-  }
-  
-  .image-input, .key-input, .value-input {
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    width: 100%;
-    font-size: 14px;
-  }
-  
-  .key-value-field {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .submit-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .submit-button:hover {
-    background-color: #0056b3;
-  }
-  
-  
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dynamic-form h2,
+h3 {
+  text-align: center;
+  color: #333;
+}
+
+.image-field,
+.key-value-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.image-input,
+.key-input,
+.value-input {
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  width: 100%;
+  font-size: 14px;
+}
+
+.key-value-field {
+  display: flex;
+  gap: 10px;
+}
+
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}

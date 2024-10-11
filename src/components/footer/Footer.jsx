@@ -75,7 +75,7 @@ function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2024 Trendify. All rights reserved.</p>
+          <p>&copy; 2024 TrendiFy. All rights reserved.</p>
         </div>
       </footer>
     </>

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Slider from "../slider/Slider";
-// import Cardslider from "../cardslider/Cardslider";
 import Card from "../product card/Card";
 import "./Home.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import CategoryCard from "../category card/CategoryCard";
+import { BASE_URL } from "../../utils/constants";
 
 const newArrivalSampleData = [
   {
@@ -122,13 +122,13 @@ function Home() {
   useEffect(() => {
     try {
       const fetchData = async () => {
-        const Data = await axios.get("http://localhost:8080/pm/product");
+        const Data = await axios.get(`${BASE_URL}/pm/product`);
         setProductData(Data.data.data);
         console.log(Data.data.data);
       };
       fetchData();
     } catch (error) {
-      console.log("sonmething went wrong while fetching product  ");
+      console.log("something went wrong while fetching product  ");
     }
   }, []);
 
@@ -141,10 +141,7 @@ function Home() {
       <div className="categories-data">
         {sampleCategoryData.map((item) => {
           return (
-            <CategoryCard
-              url={item.url}
-              CategoryName={item.CategoryName}
-            />
+            <CategoryCard url={item.url} CategoryName={item.CategoryName} />
           );
         })}
       </div>

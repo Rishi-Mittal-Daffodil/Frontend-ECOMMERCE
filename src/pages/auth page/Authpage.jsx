@@ -23,7 +23,7 @@ function Authpage() {
   useEffect(() => {
     if (pathname === "/signup") {
       setFlag(true);
-      setHeading("Register with The TrendiFY")
+      setHeading("Register with The TrendiFY");
     } else {
       setHeading("Login with The TrendiFY");
       setFlag(false);

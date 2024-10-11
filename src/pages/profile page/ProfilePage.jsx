@@ -1,12 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAuth } from "../../userContext/UserAuthContext";
-import './ProfilePage.css'
-
+import "./ProfilePage.css";
+import toast from "react-hot-toast";
+import { handleDelete, handleLogout } from "../../services/ManageDialog";
 function ProfilePage() {
   const { user } = useAuth();
-  console.log(user);
+  const [isVisible, setIsVisible] = useState(false);
+  const [dialogMessage, setDialogMessage] = useState("");
+  const handleClose = () => {
+    setIsVisible(false);
+  };
+  const handleCancel = () => {
+    setIsVisible(false);
+  };
+  // console.log(user);
+  function handleDeleteAccount() {
+    setIsVisible(true);
+    setDialogMessage("Are you sure you want to delete your account?");
+  }
+  function handleLogoutAccount() {
+    setIsVisible(true);
+    setDialogMessage("Are you sure you want to logout?");
+  }
+
+  async function handleConfirm() {
+    if (dialogMessage === "Are you sure you want to delete your account?") {
+      await handleDelete();
+    } else {
+      await handleLogout();
+    }
+    setIsVisible(false);
+  }
   return (
     <>
+      <div>
+        {isVisible && (
+          <div className="dialog-overlay">
+            <div className="dialog-box">
+              <button className="close-button" onClick={handleClose}>
+                &times;
+              </button>
+              <h5>{dialogMessage}</h5>
+              <div className="dialog-buttons">
+                <button className="yes-button" onClick={handleConfirm}>
+                  YES
+                </button>
+                <button className="no-button" onClick={handleCancel}>
+                  NO
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
       <div className="profile-page">
         <div className="left-section">
           <div className="detail-upper-left">
@@ -14,9 +61,19 @@ function ProfilePage() {
             <p>{user.email}</p>
           </div>
           <div className="order-section">Orders</div>
-          <div className="delete-logout-button" >
-            <button className="left-account-button">DELETE MY ACCOUNT</button>
-            <button className="left-account-button">LOGOUT</button>
+          <div className="delete-logout-button">
+            <button
+              onClick={handleDeleteAccount}
+              className="left-account-button"
+            >
+              DELETE MY ACCOUNT
+            </button>
+            <button
+              onClick={handleLogoutAccount}
+              className="left-account-button"
+            >
+              LOGOUT
+            </button>
           </div>
         </div>
         <div className="right-section">

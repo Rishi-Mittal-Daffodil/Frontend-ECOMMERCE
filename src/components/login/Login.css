@@ -34,18 +34,17 @@
 .register-btn {
   width: 93%;
   padding: 8px;
-  background-color: #ed2d2f;
+  background-color: #298e83;
   color: #fff;
   border: none;
   border-radius: 10px;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
   margin-top: 16px;
 }
 
 .register-btn:hover {
-  background-color: #ff0149;
+  background-color: #2e9e91;
 }
 
 .login-text {

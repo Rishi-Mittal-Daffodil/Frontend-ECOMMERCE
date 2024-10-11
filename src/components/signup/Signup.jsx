@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./Signup.css";
 import Loader from "../loader/Loader";
 import toast from "react-hot-toast";
+import { BASE_URL } from "../../utils/constants";
 function Signup() {
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState("");
@@ -16,7 +17,6 @@ function Signup() {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    const formdata = new FormData();
 
     if (password !== confirmPassword) {
       toast.error("Please Write Correct Password");
@@ -31,10 +31,7 @@ function Signup() {
     };
     setLoading(true);
     try {
-      const res = await axios.post(
-        "http://localhost:8080/um/user-request",
-        userObj
-      );
+      const res = await axios.post(`${BASE_URL}/um/user-request`, userObj);
       console.log(res.data);
       setLoading(false);
       navigate("/signup/verify-otp", { state: email });

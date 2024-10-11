@@ -1,7 +1,7 @@
-import React from 'react';
-import './NotFoundPage.css'; 
+import React from "react";
+import "./NotFoundPage.css";
 
-function NotFoundPage(){
+function NotFoundPage() {
   return (
     <div className="not-found-container">
       <img
@@ -9,9 +9,11 @@ function NotFoundPage(){
         alt="Not Found"
         className="not-found-image"
       />
-      <p className="not-found-text">We can't seem to find the page you are looking for.</p>
+      <p className="not-found-text">
+        We can't seem to find the page you are looking for.
+      </p>
     </div>
   );
-};
+}
 
 export default NotFoundPage;

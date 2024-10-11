@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./components/login/Login";
 import Signup from "./components/signup/Signup";
@@ -16,9 +16,8 @@ import Cart from "./pages/cart page/Cart";
 import Wishlist from "./pages/wishlist page/Wishlist";
 import { Toaster } from "react-hot-toast";
 import ProductPage from "./pages/product page/ProductPage";
-import "@fortawesome/fontawesome-free/css/all.min.css";
 import NotFoundPage from "./pages/notfound page/NotFoundPage";
-
+import ManageDialog from "./services/ManageDialog";
 function App() {
   const { isAuth, role } = useAuth();
   console.log(isAuth, role);
@@ -28,6 +27,7 @@ function App() {
         <Router>
           <Toaster position="top-right" reverseOrder={false} />
           <Navbar />
+          <ManageDialog />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/" element={isAuth ? <Home /> : <Authpage />}>

@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import EmptyCart from "../../components/empty cart/EmptyCart";
 
 function Cart() {
-  return (
-    <h1>Cart</h1>
-  )
+  return <EmptyCart />;
 }
 
-export default Cart
+export default Cart;

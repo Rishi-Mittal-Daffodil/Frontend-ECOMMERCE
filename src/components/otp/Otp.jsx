@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import Loader from "../loader/Loader";
 import toast from "react-hot-toast";
+import { BASE_URL } from "../../utils/constants";
 
 function Otp() {
   const [otp, setOtp] = useState();
@@ -23,7 +24,7 @@ function Otp() {
 
     try {
       const res = await axios.post(
-        "http://localhost:8080/um/user-request/verifyOtp",
+        `${BASE_URL}/um/user-request/verifyOtp`,
         data
       );
       setLoading(false);

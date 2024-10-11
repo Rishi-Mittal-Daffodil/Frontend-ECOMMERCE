@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Loader from "../loader/Loader";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { BASE_URL } from "../../utils/constants";
 function ProductAddForm() {
   const [loading, setLoading] = useState(false);
   const [product, setProduct] = useState({
@@ -63,14 +64,11 @@ function ProductAddForm() {
   useEffect(() => {
     try {
       const getCategoryData = async () => {
-        const res = await axios.get(
-          "http://localhost:8080/pm/category/get-category",
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+        const res = await axios.get(`${BASE_URL}/pm/category/get-category`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
         setCategoryData(res.data);
         console.log(categoryData);
         console.log(images);
@@ -166,16 +164,12 @@ function ProductAddForm() {
       formData.append("ratings", product.ratings);
       formData.append("weight", product.weight);
 
-      const res = await axios.post(
-        "http://localhost:8080/pm/product",
-        formData,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const res = await axios.post(`${BASE_URL}/pm/product`, formData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "multipart/form-data",
+        },
+      });
       console.log(res);
       setLoading(false);
       navigate("/");
@@ -183,7 +177,6 @@ function ProductAddForm() {
     } catch (error) {
       setLoading(false);
       toast.success("Something Went Wrong");
-      // console.log(formData);
       console.log(error);
     }
     console.log(product);
